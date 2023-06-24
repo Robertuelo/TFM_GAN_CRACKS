@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados</title>
+</head>
+<body>
+    <h1>Resultados</h1>
+    <h2>Imágenes Generadas</h2>
+    {% for i, image in enumerate(generated_images) %}
+        <h3>Modelo {{ i+1 }}</h3>
+        <img src="{{ url_for('download', filename=image) }}" alt="Generated Image">
+        <p>Generada por el modelo {{ i+1 }}</p>
+    {% endfor %}
+    <h2>Imagen Aleatoria del Dataset</h2>
+    <img src="{{ url_for('download', filename=random_image) }}" alt="Random Image from Dataset">
+    <p>Imagen Real del Dataset</p>
+</body>
+</html>
+
+
